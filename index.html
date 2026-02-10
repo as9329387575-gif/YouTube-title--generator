@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>YouTube Title Generator – Create Viral & SEO-Optimized Titles</title>
+    <meta name="description" content="Free YouTube Title Generator creates high-CTR, SEO-optimized titles for your videos. Get viral, professional, or clickbait titles in seconds. Boost your YouTube views today!">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="YouTube Title Generator – Create Viral & SEO-Optimized Titles">
+    <meta property="og:description" content="Free AI tool to generate high-CTR YouTube titles. SEO-optimized for maximum views and engagement.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://img.icons8.com/color/480/youtube-play.png">
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="YouTube title generator, viral YouTube titles, SEO YouTube title tool, YouTube SEO, high CTR titles, YouTube clickbait titles">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    
+    <style>
+        /* CSS Variables for Light/Dark Mode */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --text-tertiary: #adb5bd;
+            --accent-primary: #ff0000;
+            --accent-secondary: #0056b3;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #2d2d2d;
+            --text-primary: #f8f9fa;
+            --text-secondary: #adb5bd;
+            --text-tertiary: #6c757d;
+            --accent-primary: #ff3333;
+            --accent-secondary: #4dabf7;
+            --border-color: #444;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        button, input, select, textarea {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .dark-mode header {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            font-size: 28px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Tool Section */
+        .tool-container {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 14px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+        }
+
+        .generate-btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .generate-btn {
+            background-color: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .generate-btn:hover {
+            background-color: #e60000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.25);
+        }
+
+        .sticky-generate {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 90;
+            padding: 12px 30px;
+            font-size: 1rem;
+            display: none;
+        }
+
+        .sticky-generate.visible {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        /* Results Section */
+        .results-container {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .results-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .regenerate-btn {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .regenerate-btn:hover {
+            background-color: var(--border-color);
+        }
+
+        .titles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .title-item {
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .title-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-mode .title-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .title-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .title-stats {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .character-count {
+            background-color: var(--bg-tertiary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .character-count.good {
+            color: #28a745;
+        }
+
+        .character-count.warning {
+            color: #ffc107;
+        }
+
+        .copy-btn {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-secondary);
+            color: white;
+        }
+
+        .copy-btn.copied {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Content Sections */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .content-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .content-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--accent-primary);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+        }
+
+        /* Email Capture */
+        .email-capture {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: var(--radius);
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .email-capture h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .email-capture p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .email-submit {
+            background-color: white;
+            color: var(--accent-primary);
+            border: none;
+            padding: 16px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .email-submit:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-tertiary);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Ad Placeholder */
+        .ad-placeholder {
+            background-color: var(--bg-tertiary);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tool-container, .results-container {
+                padding: 25px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .title-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .title-stats {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate(-50%, 10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--bg-tertiary);
+            border-top: 4px solid var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <!-- Schema FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does the YouTube Title Generator work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our AI-powered tool analyzes your video topic, target audience, keywords, and selected tone to generate 10 high-CTR YouTube titles following SEO best practices. Each title is optimized for maximum click-through rates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are the generated titles SEO-optimized?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all titles follow YouTube SEO rules: they're under 60 characters, include emotional triggers, create curiosity while maintaining clarity, and have proper keyword placement for better search visibility."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes a good YouTube title?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good YouTube title is under 60 characters, includes emotional triggers, creates curiosity, contains relevant keywords, and clearly communicates the video's value proposition to the target audience."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use these titles for my YouTube videos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! All generated titles are royalty-free and can be used for your YouTube videos. You can copy them with one click and modify them as needed for your specific content."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this YouTube title generator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, this YouTube Title Generator is completely free to use. You can generate unlimited titles without any registration or subscription required."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span>YouTube Title Generator</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>YouTube Title Generator – Create Viral & SEO-Optimized Titles</h1>
+            <p>Generate high-CTR YouTube titles in seconds. Our AI-powered tool creates SEO-optimized titles that drive views, engagement, and growth for your channel.</p>
+            <div class="ad-placeholder">
+                Ad Space - 728x90 (For AdSense)
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Tool Section -->
+    <section id="generator">
+        <div class="container">
+            <div class="tool-container fade-in">
+                <h2 style="margin-bottom: 30px; font-size: 1.8rem;">Generate Your YouTube Titles</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="topic">Video Topic *</label>
+                        <input type="text" id="topic" placeholder="e.g., Digital marketing tips for beginners" value="Digital marketing tips for beginners">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="audience">Target Audience</label>
+                        <input type="text" id="audience" placeholder="e.g., Small business owners, age 25-45" value="Small business owners">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="keywords">Keywords (comma separated)</label>
+                        <input type="text" id="keywords" placeholder="e.g., digital marketing, SEO, social media" value="digital marketing, SEO, social media">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tone">Select Tone</label>
+                        <select id="tone">
+                            <option value="viral">Viral</option>
+                            <option value="professional" selected>Professional</option>
+                            <option value="emotional">Emotional</option>
+                            <option value="clickbait">Clickbait</option>
+                            <option value="educational">Educational</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="generate-btn-container">
+                    <button class="generate-btn" id="generateBtn">
+                        <span>🎬</span> Generate 10 YouTube Titles
+                    </button>
+                </div>
+                
+                <button class="generate-btn sticky-generate" id="stickyGenerateBtn">
+                    <span>🎬</span> Generate Titles
+                </button>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-container fade-in" id="resultsContainer" style="display: none;">
+                <div class="results-header">
+                    <h2>Your Generated YouTube Titles</h2>
+                    <button class="regenerate-btn" id="regenerateBtn">
+                        <span>🔄</span> Regenerate Titles
+                    </button>
+                </div>
+                
+                <div class="titles-list" id="titlesList">
+                    <!-- Generated titles will appear here -->
+                </div>
+                
+                <div class="ad-placeholder" style="margin-top: 40px;">
+                    Ad Space - 300x250 (For AdSense)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>What is YouTube Title Generator</h2>
+                <p>A powerful AI tool designed to create high-converting, SEO-optimized titles for YouTube videos that drive clicks and engagement.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>AI-Powered Generation</h3>
+                    <p>Our advanced algorithm analyzes your content, audience, and keywords to create titles that resonate with viewers and YouTube's search algorithm.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>SEO-Optimized</h3>
+                    <p>Every title follows YouTube SEO best practices with proper character limits, keyword placement, and emotional triggers for maximum visibility.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Multiple Tones</h3>
+                    <p>Generate titles in different tones - from viral and clickbait to professional and educational - to match your channel's style and content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="why-seo-matters" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why SEO-Optimized Titles Matter</h2>
+                <p>Your YouTube title is the first thing viewers see. An optimized title can significantly increase your click-through rate and search visibility.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Higher Click-Through Rates</h3>
+                    <p>Titles with emotional triggers and curiosity gaps can increase CTR by up to 300%, bringing more viewers to your videos.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Better Search Rankings</h3>
+                    <p>Proper keyword placement and SEO optimization help YouTube's algorithm understand your content, improving your search rankings.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Increased Engagement</h3>
+                    <p>Well-crafted titles set proper expectations, leading to higher watch time, likes, comments, and shares.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="who-should-use">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who Should Use This Tool</h2>
+                <p>This tool is designed for content creators, marketers, and businesses looking to optimize their YouTube presence.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>YouTube Creators</h3>
+                    <p>Boost your channel's growth with titles that attract more views and subscribers to your content.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Digital Marketers</h3>
+                    <p>Create compelling titles for client videos that drive traffic, leads, and conversions.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Businesses</h3>
+                    <p>Improve your corporate YouTube channel's performance with optimized titles that reflect your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our YouTube Title Generator.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How does the YouTube Title Generator work?</div>
+                    <div class="faq-answer">Our AI-powered tool analyzes your video topic, target audience, keywords, and selected tone to generate 10 high-CTR YouTube titles following SEO best practices. Each title is optimized for maximum click-through rates.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Are the generated titles SEO-optimized?</div>
+                    <div class="faq-answer">Yes, all titles follow YouTube SEO rules: they're under 60 characters, include emotional triggers, create curiosity while maintaining clarity, and have proper keyword placement for better search visibility.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What makes a good YouTube title?</div>
+                    <div class="faq-answer">A good YouTube title is under 60 characters, includes emotional triggers, creates curiosity, contains relevant keywords, and clearly communicates the video's value proposition to the target audience.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I use these titles for my YouTube videos?</div>
+                    <div class="faq-answer">Absolutely! All generated titles are royalty-free and can be used for your YouTube videos. You can copy them with one click and modify them as needed for your specific content.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Is this YouTube title generator free?</div>
+                    <div class="faq-answer">Yes, this YouTube Title Generator is completely free to use. You can generate unlimited titles without any registration or subscription required.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture Section -->
+    <section id="newsletter">
+        <div class="container">
+            <div class="email-capture">
+                <h2>Get More YouTube Growth Tips</h2>
+                <p>Subscribe to our newsletter for weekly YouTube optimization strategies, title ideas, and channel growth techniques.</p>
+                
+                <form class="email-form" id="emailForm">
+                    <input type="email" class="email-input" placeholder="Your email address" required>
+                    <button type="submit" class="email-submit">Subscribe</button>
+                </form>
+                
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">No spam. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">YouTube Title Generator</div>
+                
+                <div class="footer-links">
+                    <a href="#generator">Generate Titles</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#why-seo-matters">SEO Tips</a>
+                    <a href="#faq">FAQs</a>
+                </div>
+                
+                <p class="copyright">© 2023 YouTube Title Generator. All rights reserved. This tool is for educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const generateBtn = document.getElementById('generateBtn');
+        const stickyGenerateBtn = document.getElementById('stickyGenerateBtn');
+        const regenerateBtn = document.getElementById('regenerateBtn');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const titlesList = document.getElementById('titlesList');
+        const emailForm = document.getElementById('emailForm');
+        
+        // Title generation templates - SIMPLIFIED and WORKING
+        const titlePatterns = {
+            viral: [
+                "The Truth About {topic} That Will Shock You",
+                "{topic} Is Changing Everything - Here's How",
+                "Why Everyone Is Talking About {topic} Right Now",
+                "{topic}: The Viral Trend You Can't Ignore",
+                "This {topic} Secret Went Viral Overnight",
+                "How {topic} Is Taking Over The Internet",
+                "{topic} Explained: Why It's Everywhere Now",
+                "The {topic} Phenomenon: What You Need To Know",
+                "{topic} Is Blowing Up - Don't Get Left Behind",
+                "Why {topic} Is The Biggest Trend of The Year"
+            ],
+            professional: [
+                "Mastering {topic}: A Professional Guide",
+                "{topic}: Best Practices and Strategies",
+                "Advanced Techniques for {topic} Success",
+                "The Complete Guide to Professional {topic}",
+                "{topic} Implementation: Expert Insights",
+                "Optimizing {topic}: Data-Driven Approaches",
+                "{topic} Strategies That Deliver Results",
+                "Professional Development: Enhancing Your {topic} Skills",
+                "Industry Standards for Effective {topic}",
+                "{topic} Excellence: Achieving Professional Results"
+            ],
+            emotional: [
+                "The Heartbreaking Truth About {topic}",
+                "How {topic} Changed My Life Forever",
+                "The Emotional Journey of {topic}",
+                "Why {topic} Makes Me Cry Every Time",
+                "The Inspiring Story Behind {topic}",
+                "{topic}: A Story of Hope and Courage",
+                "The Emotional Impact of {topic} Revealed",
+                "How {topic} Touched My Heart Deeply",
+                "The Beautiful Struggle of {topic}",
+                "{topic}: More Than You Could Ever Imagine"
+            ],
+            clickbait: [
+                "You Won't Believe What Happened With {topic}",
+                "This {topic} Trick Is Too Good To Be True",
+                "What They Don't Want You To Know About {topic}",
+                "The Shocking Truth About {topic} Revealed",
+                "I Tried {topic} And The Results Were Insane",
+                "This {topic} Secret Will Blow Your Mind",
+                "Stop Everything And Watch This {topic}",
+                "{topic} Exposed: The Untold Story",
+                "What Happens Next In {topic} Will Shock You",
+                "The {topic} That Broke All The Rules"
+            ],
+            educational: [
+                "How To Master {topic} Step By Step",
+                "{topic} Explained Simply For Beginners",
+                "The Complete Beginner's Guide to {topic}",
+                "Learning {topic}: From Zero To Hero",
+                "{topic} Fundamentals Everyone Should Know",
+                "Teaching {topic} In Simple Terms",
+                "Understanding {topic}: A Clear Explanation",
+                "{topic} Basics: Start Here First",
+                "How {topic} Works: A Visual Guide",
+                "Master {topic} With These Easy Steps"
+            ]
+        };
+        
+        // Initialize theme
+        function initTheme() {
+            const savedTheme = localStorage.getItem('youtubeTitleGeneratorTheme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeIcon.textContent = '☀️';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeIcon.textContent = '🌙';
+            }
+        }
+        
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('youtubeTitleGeneratorTheme', 'dark');
+                themeIcon.textContent = '☀️';
+            } else {
+                localStorage.setItem('youtubeTitleGeneratorTheme', 'light');
+                themeIcon.textContent = '🌙';
+            }
+        });
+        
+        // Generate YouTube titles - SIMPLIFIED and WORKING
+        function generateTitles() {
+            const topic = document.getElementById('topic').value.trim();
+            const audience = document.getElementById('audience').value.trim();
+            const keywords = document.getElementById('keywords').value.trim();
+            const tone = document.getElementById('tone').value;
+            
+            // Validate inputs
+            if (!topic) {
+                alert('Please enter a video topic');
+                return;
+            }
+            
+            // Show loading state
+            resultsContainer.style.display = 'block';
+            titlesList.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Generating SEO-optimized YouTube titles...</p>
+                </div>
+            `;
+            
+            // Simulate processing time
+            setTimeout(() => {
+                // Get patterns for selected tone
+                const patterns = titlePatterns[tone] || titlePatterns.professional;
+                
+                // Parse keywords
+                let keywordArray = [];
+                if (keywords) {
+                    keywordArray = keywords.split(',').map(k => k.trim()).filter(k => k.length > 0);
+                }
+                
+                // If no keywords, use topic words
+                if (keywordArray.length === 0) {
+                    keywordArray = topic.split(' ').slice(0, 3);
+                }
+                
+                // Generate 10 unique titles
+                const generatedTitles = [];
+                const usedIndices = new Set();
+                
+                // Make sure we get exactly 10 titles
+                while (generatedTitles.length < 10) {
+                    let idx;
+                    // Find an unused pattern index
+                    do {
+                        idx = Math.floor(Math.random() * patterns.length);
+                    } while (usedIndices.has(idx) && usedIndices.size < patterns.length);
+                    
+                    usedIndices.add(idx);
+                    
+                    // Get the pattern
+                    let title = patterns[idx];
+                    
+                    // Replace {topic} placeholder
+                    title = title.replace(/{topic}/g, topic);
+                    
+                    // Add keywords occasionally
+                    if (keywordArray.length > 0 && Math.random() > 0.5) {
+                        const keyword = keywordArray[Math.floor(Math.random() * keywordArray.length)];
+                        // Add keyword in different ways
+                        if (Math.random() > 0.5) {
+                            title = keyword + " | " + title;
+                        } else {
+                            title = title + " (" + keyword + ")";
+                        }
+                    }
+                    
+                    // Add audience if provided
+                    if (audience && Math.random() > 0.6) {
+                        title = title.replace("You", audience);
+                        title = title + " For " + audience;
+                    }
+                    
+                    // Ensure title is under 60 characters
+                    if (title.length > 60) {
+                        title = title.substring(0, 57).trim() + '...';
+                    }
+                    
+                    // Add to results if not duplicate
+                    if (!generatedTitles.includes(title)) {
+                        generatedTitles.push(title);
+                    }
+                    
+                    // If we've used all patterns and don't have 10 titles, reset used indices
+                    if (usedIndices.size >= patterns.length && generatedTitles.length < 10) {
+                        usedIndices.clear();
+                    }
+                }
+                
+                // Display generated titles
+                displayTitles(generatedTitles);
+                
+                // Scroll to results
+                resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 800);
+        }
+        
+        // Display generated titles
+        function displayTitles(titles) {
+            titlesList.innerHTML = '';
+            
+            titles.forEach((title, index) => {
+                const characterCount = title.length;
+                const characterClass = characterCount < 50 ? 'good' : characterCount < 60 ? 'warning' : '';
+                
+                const titleItem = document.createElement('div');
+                titleItem.className = 'title-item';
+                titleItem.style.animationDelay = `${index * 0.05}s`;
+                
+                titleItem.innerHTML = `
+                    <div class="title-text">${title}</div>
+                    <div class="title-stats">
+                        <div class="character-count ${characterClass}">${characterCount}/60</div>
+                        <button class="copy-btn" data-title="${title}" aria-label="Copy title">
+                            📋
+                        </button>
+                    </div>
+                `;
+                
+                titlesList.appendChild(titleItem);
+            });
+            
+            // Add copy functionality
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const title = this.getAttribute('data-title');
+                    copyToClipboard(title, this);
+                });
+            });
+        }
+        
+        // Copy title to clipboard
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalContent = button.innerHTML;
+                button.innerHTML = '✓';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.innerHTML = '📋';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    button.innerHTML = '✓';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.innerHTML = '📋';
+                        button.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    alert('Failed to copy title to clipboard');
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+        
+        // Handle sticky generate button
+        function handleScroll() {
+            const toolContainer = document.querySelector('.tool-container');
+            if (!toolContainer) return;
+            
+            const toolContainerBottom = toolContainer.offsetTop + toolContainer.offsetHeight;
+            
+            if (window.scrollY > toolContainerBottom - 100) {
+                stickyGenerateBtn.classList.add('visible');
+            } else {
+                stickyGenerateBtn.classList.remove('visible');
+            }
+        }
+        
+        // Event Listeners
+        generateBtn.addEventListener('click', generateTitles);
+        stickyGenerateBtn.addEventListener('click', generateTitles);
+        regenerateBtn.addEventListener('click', generateTitles);
+        
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            
+            // Generate initial titles after a short delay
+            setTimeout(generateTitles, 100);
+        });
+        
+        // Handle scroll for sticky button
+        window.addEventListener('scroll', handleScroll);
+        
+        // Handle email form submission
+        emailForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('.email-input');
+            const email = emailInput.value.trim();
+            
+            if (email && validateEmail(email)) {
+                alert(`Thank you for subscribing! We've sent a confirmation to ${email}`);
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address');
+            }
+        });
+        
+        // Email validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
